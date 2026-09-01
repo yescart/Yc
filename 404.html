@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redirecting...</title>
+  <script>
+    // GitHub Pages 404 redirect to index.html
+    (function() {
+      const path = window.location.pathname;
+      const pathArray = path.split('/').filter(Boolean);
+      
+      // Get the last segment (folder name)
+      let folder = pathArray[pathArray.length - 1];
+      
+      // Map of valid routes
+      const validRoutes = [
+        'buy',
+        'sell',
+        'old-items',
+        'delivery',
+        'jobs',
+        'about',
+        'contact',
+        'login',
+        'register',
+        'invest'
+      ];
+      
+      // If it's a valid route folder, redirect to its index.html
+      if (validRoutes.includes(folder)) {
+        window.location.href = '/' + folder + '/';
+      } else {
+        // Otherwise redirect to home
+        window.location.href = '/';
+      }
+    })();
+  </script>
+</head>
+<body>
+  <p>Redirecting...</p>
+</body>
+</html>
