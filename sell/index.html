@@ -5,153 +5,67 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Sell New Products — YesCart</title>
-  <meta name="description" content="Sell new products and grow your business with YesCart.">
+  <meta name="description" content="Sell your products and grow your business on YesCart.">
 
   <link rel="stylesheet" href="../style.css">
 
   <style>
-    /* =========================
-       SELL PAGE
-    ========================= */
-
-    .sell-hero {
-      background:
-        radial-gradient(circle at 85% 20%, rgba(255,122,0,.18), transparent 30%),
-        linear-gradient(135deg, #071a35, #102b50);
+    .page-hero {
+      background: linear-gradient(135deg, #071a35, #102b50);
       color: white;
       padding: 75px 0;
+      text-align: center;
     }
 
-    .sell-hero-grid {
-      display: grid;
-      grid-template-columns: 1.2fr .8fr;
-      align-items: center;
-      gap: 60px;
-    }
-
-    .sell-hero h1 {
-      font-size: clamp(38px, 5vw, 62px);
+    .page-hero h1 {
+      font-size: clamp(36px, 6vw, 60px);
       line-height: 1.05;
-      letter-spacing: -2px;
-      margin: 12px 0 18px;
+      margin-bottom: 15px;
     }
 
-    .sell-hero h1 span {
+    .page-hero h1 span {
       color: #ff7a00;
     }
 
-    .sell-hero p {
-      color: #c7d1df;
+    .page-hero p {
+      color: #c6d0df;
       font-size: 18px;
-      max-width: 600px;
     }
-
-    .sell-visual {
-      min-height: 300px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .seller-card {
-      width: 320px;
-      background: white;
-      color: #071a35;
-      border-radius: 25px;
-      padding: 30px;
-      box-shadow: 0 25px 60px rgba(0,0,0,.25);
-      transform: rotate(2deg);
-    }
-
-    .seller-icon {
-      width: 70px;
-      height: 70px;
-      border-radius: 20px;
-      background: #fff1e6;
-      display: grid;
-      place-items: center;
-      font-size: 35px;
-      margin-bottom: 20px;
-    }
-
-    .seller-card h3 {
-      font-size: 24px;
-      margin-bottom: 8px;
-    }
-
-    .seller-card p {
-      color: #667085;
-      font-size: 14px;
-    }
-
-    .seller-stats {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 10px;
-      margin-top: 22px;
-    }
-
-    .seller-stat {
-      background: #f6f8fb;
-      border-radius: 12px;
-      padding: 13px;
-    }
-
-    .seller-stat strong {
-      display: block;
-      color: #18a957;
-      font-size: 17px;
-    }
-
-    .seller-stat small {
-      color: #667085;
-      font-size: 11px;
-    }
-
-
-    /* FORM */
 
     .sell-section {
-      padding: 80px 0;
+      padding: 70px 0;
       background: #f6f8fb;
     }
 
     .sell-layout {
       display: grid;
-      grid-template-columns: 1.4fr .6fr;
-      gap: 30px;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 40px;
       align-items: start;
     }
 
-    .form-card,
-    .benefits-card {
+    .sell-form-card {
       background: white;
       border: 1px solid #e7ebf0;
       border-radius: 24px;
-      padding: 32px;
+      padding: 40px;
       box-shadow: 0 10px 35px rgba(7,26,53,.05);
     }
 
-    .form-card h2,
-    .benefits-card h2 {
+    .sell-form-card h2 {
       color: #071a35;
+      font-size: 28px;
       margin-bottom: 8px;
     }
 
     .form-intro {
       color: #667085;
       font-size: 14px;
-      margin-bottom: 28px;
-    }
-
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 17px;
+      margin-bottom: 30px;
     }
 
     .form-group {
-      margin-bottom: 18px;
+      margin-bottom: 22px;
     }
 
     .form-group label {
@@ -159,7 +73,7 @@
       color: #172033;
       font-size: 13px;
       font-weight: 800;
-      margin-bottom: 7px;
+      margin-bottom: 8px;
     }
 
     .form-group input,
@@ -183,89 +97,106 @@
     }
 
     .form-group textarea {
-      min-height: 120px;
+      min-height: 100px;
       resize: vertical;
     }
 
-    .image-upload {
-      border: 2px dashed #dfe4ea;
-      border-radius: 14px;
-      padding: 28px 15px;
-      text-align: center;
-      cursor: pointer;
-      transition: .2s;
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
     }
 
-    .image-upload:hover {
-      border-color: #ff7a00;
-      background: #fffaf5;
-    }
-
-    .image-upload-icon {
-      font-size: 32px;
-      margin-bottom: 7px;
-    }
-
-    .image-upload p {
-      color: #667085;
-      font-size: 12px;
-    }
-
-    .publish-btn {
+    .submit-btn {
       width: 100%;
       border: 0;
       cursor: pointer;
-      margin-top: 5px;
+      margin-top: 10px;
     }
 
-
-    /* BENEFITS */
-
-    .benefits-list {
-      margin-top: 25px;
+    .sell-info-card {
+      background: white;
+      border: 1px solid #e7ebf0;
+      border-radius: 24px;
+      padding: 32px;
+      box-shadow: 0 10px 35px rgba(7,26,53,.05);
     }
 
-    .benefit-item {
+    .sell-info-card h3 {
+      color: #071a35;
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    .info-item {
       display: flex;
-      gap: 13px;
-      margin-bottom: 22px;
+      gap: 15px;
+      margin-bottom: 25px;
     }
 
-    .benefit-check {
-      flex: 0 0 38px;
-      width: 38px;
-      height: 38px;
+    .info-icon {
+      width: 45px;
+      height: 45px;
       border-radius: 12px;
-      background: #eaf9f0;
-      color: #18a957;
+      background: #fff1e6;
       display: grid;
       place-items: center;
-      font-weight: 900;
+      font-size: 20px;
+      flex-shrink: 0;
     }
 
-    .benefit-item h3 {
+    .info-text h4 {
       color: #071a35;
-      font-size: 15px;
+      font-size: 14px;
       margin-bottom: 3px;
     }
 
-    .benefit-item p {
+    .info-text p {
       color: #667085;
       font-size: 12px;
+      line-height: 1.5;
     }
 
-    .seller-note {
-      margin-top: 25px;
-      background: #fff7ef;
-      border: 1px solid #ffe1c4;
-      border-radius: 15px;
-      padding: 15px;
-      color: #8a4b13;
-      font-size: 12px;
+    .benefits-section {
+      background: white;
+      padding: 80px 0;
     }
 
+    .benefit-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
 
-    /* SUCCESS MESSAGE */
+    .benefit-card {
+      background: #f6f8fb;
+      border-radius: 20px;
+      padding: 30px 22px;
+      text-align: center;
+      transition: .3s ease;
+    }
+
+    .benefit-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(7,26,53,.09);
+      background: white;
+    }
+
+    .benefit-emoji {
+      font-size: 40px;
+      margin-bottom: 12px;
+    }
+
+    .benefit-card h3 {
+      color: #071a35;
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+
+    .benefit-card p {
+      color: #667085;
+      font-size: 13px;
+    }
 
     .success-message {
       display: none;
@@ -278,65 +209,42 @@
       font-weight: 700;
     }
 
-
-    /* MOBILE */
-
-    @media(max-width: 850px) {
-
-      .sell-hero-grid,
+    @media(max-width: 900px) {
       .sell-layout {
         grid-template-columns: 1fr;
       }
-
-      .sell-visual {
-        min-height: 280px;
-      }
-
-    }
-
-    @media(max-width: 550px) {
-
-      .sell-hero {
-        padding: 60px 0;
-      }
-
-      .form-card,
-      .benefits-card {
-        padding: 22px;
-      }
-
       .form-row {
         grid-template-columns: 1fr;
-        gap: 0;
       }
-
-      .seller-card {
-        width: 290px;
+      .benefit-grid {
+        grid-template-columns: repeat(2, 1fr);
       }
+    }
 
+    @media(max-width: 500px) {
+      .sell-form-card,
+      .sell-info-card {
+        padding: 25px;
+      }
+      .benefit-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 
-
 <body>
 
-<!-- =========================
-     HEADER
-========================= -->
+<!-- HEADER -->
 
 <header class="header">
-
   <div class="container nav">
 
     <a href="/" class="logo">
       <span>Yes</span>Cart
     </a>
 
-    <button
-      class="menu-btn"
-      onclick="toggleMenu()"
-      aria-label="Menu">
+    <button class="menu-btn" onclick="toggleMenu()" aria-label="Menu">
       ☰
     </button>
 
@@ -359,267 +267,163 @@
     </nav>
 
   </div>
-
 </header>
 
 
-<!-- =========================
-     HERO
-========================= -->
+<!-- PAGE HERO -->
 
-<section class="sell-hero">
+<section class="page-hero">
 
-  <div class="container sell-hero-grid">
+  <div class="container">
 
-    <div>
+    <h1>
+      SELL <span>YOUR PRODUCTS</span>
+    </h1>
 
-      <span class="section-label">
-        SELL WITH YESCART
-      </span>
-
-      <h1>
-        TURN YOUR PRODUCTS
-        INTO <span>OPPORTUNITIES.</span>
-      </h1>
-
-      <p>
-        List your products, reach more customers
-        and grow your business with YesCart.
-      </p>
-
-      <br>
-
-      <a href="#sell-form" class="btn primary">
-        START SELLING
-      </a>
-
-    </div>
-
-
-    <div class="sell-visual">
-
-      <div class="seller-card">
-
-        <div class="seller-icon">
-          🏪
-        </div>
-
-        <h3>
-          Your Business
-        </h3>
-
-        <p>
-          Build your online presence
-          with YesCart.
-        </p>
-
-        <div class="seller-stats">
-
-          <div class="seller-stat">
-            <strong>SELL</strong>
-            <small>Products</small>
-          </div>
-
-          <div class="seller-stat">
-            <strong>GROW</strong>
-            <small>Business</small>
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
+    <p>
+      Grow your business and reach more customers with YesCart.
+    </p>
 
   </div>
 
 </section>
 
 
-<!-- =========================
-     SELL FORM
-========================= -->
+<!-- SELL SECTION -->
 
-<section class="sell-section" id="sell-form">
+<section class="sell-section">
 
   <div class="container sell-layout">
 
-
     <!-- FORM -->
 
-    <div class="form-card">
+    <div class="sell-form-card">
 
       <h2>
-        Add Your Product
+        List Your Product
       </h2>
 
       <p class="form-intro">
-        Enter your product information to
-        prepare your listing.
+        Fill in the details and start selling.
       </p>
 
+      <form id="sellForm">
 
-      <form id="productForm">
-
-
-        <div class="form-row">
-
-          <div class="form-group">
-
-            <label for="productName">
-              Product Name
-            </label>
-
-            <input
-              type="text"
-              id="productName"
-              placeholder="Enter product name"
-              required
-            >
-
-          </div>
-
-
-          <div class="form-group">
-
-            <label for="category">
-              Category
-            </label>
-
-            <select id="category" required>
-
-              <option value="">
-                Select category
-              </option>
-
-              <option>
-                Electronics
-              </option>
-
-              <option>
-                Fashion
-              </option>
-
-              <option>
-                Home & Living
-              </option>
-
-              <option>
-                Beauty
-              </option>
-
-              <option>
-                Grocery
-              </option>
-
-              <option>
-                Other
-              </option>
-
-            </select>
-
-          </div>
-
+        <div class="form-group">
+          <label for="productName">
+            Product Name *
+          </label>
+          <input
+            type="text"
+            id="productName"
+            placeholder="Enter product name"
+            required
+          >
         </div>
 
-
         <div class="form-row">
+          <div class="form-group">
+            <label for="category">
+              Category *
+            </label>
+            <select id="category" required>
+              <option value="">Select category</option>
+              <option>Electronics</option>
+              <option>Fashion</option>
+              <option>Home & Living</option>
+              <option>Books</option>
+              <option>Sports</option>
+              <option>Other</option>
+            </select>
+          </div>
 
           <div class="form-group">
-
             <label for="price">
-              Price
+              Price (₹) *
             </label>
-
             <input
               type="number"
               id="price"
-              placeholder="Enter price"
-              min="0"
+              placeholder="0"
               required
+              min="0"
             >
-
           </div>
+        </div>
 
-
+        <div class="form-row">
           <div class="form-group">
-
-            <label for="stock">
-              Stock
+            <label for="quantity">
+              Quantity *
             </label>
-
             <input
               type="number"
-              id="stock"
-              placeholder="Available quantity"
-              min="0"
+              id="quantity"
+              placeholder="0"
               required
+              min="1"
             >
-
           </div>
 
+          <div class="form-group">
+            <label for="condition">
+              Condition *
+            </label>
+            <select id="condition" required>
+              <option value="">Select condition</option>
+              <option>New</option>
+              <option>Like New</option>
+              <option>Good</option>
+              <option>Fair</option>
+            </select>
+          </div>
         </div>
 
-
         <div class="form-group">
-
-          <label>
-            Product Image
-          </label>
-
-          <label class="image-upload">
-
-            <div class="image-upload-icon">
-              📷
-            </div>
-
-            <strong>
-              Upload Product Image
-            </strong>
-
-            <p>
-              JPG, PNG or WEBP
-            </p>
-
-            <input
-              type="file"
-              id="productImage"
-              accept="image/*"
-              hidden
-            >
-
-          </label>
-
-        </div>
-
-
-        <div class="form-group">
-
           <label for="description">
-            Product Description
+            Description *
           </label>
-
           <textarea
             id="description"
             placeholder="Describe your product..."
             required
           ></textarea>
-
         </div>
 
+        <div class="form-group">
+          <label for="sellerName">
+            Seller Name *
+          </label>
+          <input
+            type="text"
+            id="sellerName"
+            placeholder="Your name"
+            required
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="contact">
+            Contact Number *
+          </label>
+          <input
+            type="tel"
+            id="contact"
+            placeholder="10-digit mobile number"
+            required
+            pattern="[0-9]{10}"
+          >
+        </div>
 
         <button
           type="submit"
-          class="btn primary publish-btn">
-          PUBLISH PRODUCT
+          class="btn primary submit-btn">
+          LIST PRODUCT
         </button>
 
-
-        <div
-          id="successMessage"
-          class="success-message">
-          ✓ Product information saved for the
-          next marketplace step.
+        <div id="successMessage" class="success-message">
+          ✓ Product listed successfully!
+          Your product is now visible to buyers.
         </div>
 
       </form>
@@ -627,103 +431,72 @@
     </div>
 
 
-    <!-- BENEFITS -->
+    <!-- INFO -->
 
-    <aside class="benefits-card">
+    <aside class="sell-info-card">
 
-      <h2>
-        Why Sell on YesCart?
-      </h2>
+      <h3>
+        Why Sell with YesCart?
+      </h3>
 
-      <div class="benefits-list">
-
-
-        <div class="benefit-item">
-
-          <div class="benefit-check">
-            ✓
-          </div>
-
-          <div>
-            <h3>
-              Reach More Customers
-            </h3>
-
-            <p>
-              Present your products on a
-              growing marketplace.
-            </p>
-          </div>
-
+      <div class="info-item">
+        <div class="info-icon">
+          🌐
         </div>
-
-
-        <div class="benefit-item">
-
-          <div class="benefit-check">
-            ✓
-          </div>
-
-          <div>
-            <h3>
-              Easy Product Listing
-            </h3>
-
-            <p>
-              Simple tools designed for
-              everyday sellers.
-            </p>
-          </div>
-
+        <div class="info-text">
+          <h4>Wide Reach</h4>
+          <p>Connect with thousands of buyers easily.</p>
         </div>
-
-
-        <div class="benefit-item">
-
-          <div class="benefit-check">
-            ✓
-          </div>
-
-          <div>
-            <h3>
-              Grow Your Business
-            </h3>
-
-            <p>
-              Build your digital presence
-              with YesCart.
-            </p>
-          </div>
-
-        </div>
-
-
-        <div class="benefit-item">
-
-          <div class="benefit-check">
-            ✓
-          </div>
-
-          <div>
-            <h3>
-              Delivery Support
-            </h3>
-
-            <p>
-              Connect your products with
-              delivery services.
-            </p>
-          </div>
-
-        </div>
-
       </div>
 
+      <div class="info-item">
+        <div class="info-icon">
+          ⚡
+        </div>
+        <div class="info-text">
+          <h4>Easy Listing</h4>
+          <p>List your products in just minutes.</p>
+        </div>
+      </div>
 
-      <div class="seller-note">
-        <strong>Note:</strong>
-        Product publishing will be connected
-        to the YesCart backend in the next stage.
+      <div class="info-item">
+        <div class="info-icon">
+          📈
+        </div>
+        <div class="info-text">
+          <h4>Grow Sales</h4>
+          <p>Tools to help your business grow.</p>
+        </div>
+      </div>
+
+      <div class="info-item">
+        <div class="info-icon">
+          🛡️
+        </div>
+        <div class="info-text">
+          <h4>Safe & Secure</h4>
+          <p>Protected seller and buyer transactions.</p>
+        </div>
+      </div>
+
+      <div class="info-item">
+        <div class="info-icon">
+          💳
+        </div>
+        <div class="info-text">
+          <h4>Fast Payments</h4>
+          <p>Quick and easy payment settlement.</p>
+        </div>
+      </div>
+
+      <div class="info-item">
+        <div class="info-icon">
+          📞
+        </div>
+        <div class="info-text">
+          <h4>24/7 Support</h4>
+          <p>Help whenever you need it.</p>
+        </div>
       </div>
 
     </aside>
@@ -733,9 +506,52 @@
 </section>
 
 
-<!-- =========================
-     FOOTER
-========================= -->
+<!-- BENEFITS -->
+
+<section class="benefits-section">
+
+  <div class="container">
+
+    <div class="section-heading">
+      <span>WHY CHOOSE YESCART</span>
+      <h2>Seller Benefits</h2>
+      <p>Everything you need to succeed as a seller</p>
+    </div>
+
+    <div class="benefit-grid">
+
+      <div class="benefit-card">
+        <div class="benefit-emoji">📊</div>
+        <h3>Analytics</h3>
+        <p>Track your sales and buyer insights.</p>
+      </div>
+
+      <div class="benefit-card">
+        <div class="benefit-emoji">🚚</div>
+        <h3>Delivery</h3>
+        <p>Integrated delivery solutions.</p>
+      </div>
+
+      <div class="benefit-card">
+        <div class="benefit-emoji">💰</div>
+        <h3>Competitive Fees</h3>
+        <p>Low commission rates for sellers.</p>
+      </div>
+
+      <div class="benefit-card">
+        <div class="benefit-emoji">⭐</div>
+        <h3>Ratings</h3>
+        <p>Build trust with customer reviews.</p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- FOOTER -->
 
 <footer>
 
@@ -794,34 +610,25 @@
 
 <script>
 
-  /*
-   * Temporary frontend form.
-   * Backend/database will be connected later.
-   */
+const sellForm = document.getElementById("sellForm");
+const successMessage = document.getElementById("successMessage");
 
-  const productForm =
-    document.getElementById("productForm");
+sellForm.addEventListener("submit", function(event) {
 
-  const successMessage =
-    document.getElementById("successMessage");
+  event.preventDefault();
 
+  successMessage.style.display = "block";
 
-  productForm.addEventListener("submit", function(event) {
+  sellForm.reset();
 
-    event.preventDefault();
-
-    successMessage.style.display = "block";
-
-    productForm.reset();
-
-    successMessage.scrollIntoView({
-      behavior: "smooth",
-      block: "center"
-    });
-
+  successMessage.scrollIntoView({
+    behavior: "smooth",
+    block: "center"
   });
+
+});
 
 </script>
 
 </body>
-              </html>
+</html>

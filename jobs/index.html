@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Jobs & Opportunities — YesCart</title>
+  <meta name="description" content="Find jobs and growth opportunities with YesCart.">
+
+  <link rel="stylesheet" href="../style.css">
+
+  <style>
+    .page-hero {
+      background: linear-gradient(135deg, #071a35, #102b50);
+      color: white;
+      padding: 75px 0;
+      text-align: center;
+    }
+
+    .page-hero h1 {
+      font-size: clamp(36px, 6vw, 60px);
+      line-height: 1.05;
+      margin-bottom: 15px;
+    }
+
+    .page-hero h1 span {
+      color: #ff7a00;
+    }
+
+    .page-hero p {
+      color: #c6d0df;
+      font-size: 18px;
+    }
+
+    .jobs-section {
+      padding: 70px 0;
+      background: #f6f8fb;
+    }
+
+    .search-filter {
+      background: white;
+      padding: 30px;
+      border-radius: 16px;
+      border: 1px solid #e7ebf0;
+      margin-bottom: 40px;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr auto;
+      gap: 15px;
+      align-items: end;
+    }
+
+    .search-filter input,
+    .search-filter select {
+      padding: 12px;
+      border: 1px solid #dfe4ea;
+      border-radius: 10px;
+      outline: none;
+      font: inherit;
+    }
+
+    .search-filter input:focus,
+    .search-filter select:focus {
+      border-color: #ff7a00;
+    }
+
+    .search-filter label {
+      display: block;
+      font-size: 12px;
+      font-weight: 800;
+      color: #172033;
+      margin-bottom: 6px;
+    }
+
+    .search-btn {
+      padding: 12px 25px;
+      background: #ff7a00;
+      color: white;
+      border: 0;
+      border-radius: 10px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: .2s;
+    }
+
+    .search-btn:hover {
+      background: #e86600;
+    }
+
+    .jobs-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .job-card {
+      background: white;
+      border: 1px solid #e7ebf0;
+      border-radius: 18px;
+      padding: 28px;
+      transition: .3s ease;
+    }
+
+    .job-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(7,26,53,.09);
+      border-color: rgba(255,122,0,.3);
+    }
+
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: start;
+      margin-bottom: 15px;
+    }
+
+    .job-title {
+      color: #071a35;
+      font-size: 20px;
+      font-weight: 800;
+      max-width: 80%;
+    }
+
+    .job-type {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 800;
+      background: #fff1e6;
+      color: #8a4b13;
+      padding: 6px 12px;
+      border-radius: 6px;
+      white-space: nowrap;
+    }
+
+    .job-meta {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      margin-bottom: 18px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid #e7ebf0;
+    }
+
+    .meta-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: #667085;
+    }
+
+    .meta-icon {
+      font-size: 16px;
+    }
+
+    .job-description {
+      color: #667085;
+      font-size: 14px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .job-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+
+    .job-tag {
+      display: inline-block;
+      font-size: 12px;
+      background: #f0f5fb;
+      color: #071a35;
+      padding: 5px 12px;
+      border-radius: 20px;
+    }
+
+    .job-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .job-btn {
+      padding: 12px;
+      border: 1px solid #dfe4ea;
+      border-radius: 10px;
+      font-weight: 800;
+      font-size: 13px;
+      cursor: pointer;
+      transition: .2s;
+      background: white;
+      color: #071a35;
+    }
+
+    .job-btn:hover {
+      border-color: #ff7a00;
+      color: #ff7a00;
+    }
+
+    .apply-btn {
+      background: #ff7a00;
+      color: white;
+      border-color: #ff7a00;
+    }
+
+    .apply-btn:hover {
+      background: #e86600;
+      border-color: #e86600;
+    }
+
+    .opportunities-section {
+      background: white;
+      padding: 80px 0;
+    }
+
+    .opportunity-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .opportunity-card {
+      background: linear-gradient(135deg, #f6f8fb, #e7ecf2);
+      border-radius: 18px;
+      padding: 30px 22px;
+      text-align: center;
+      transition: .3s ease;
+      border: 1px solid #e7ebf0;
+    }
+
+    .opportunity-card:hover {
+      transform: translateY(-5px);
+      background: white;
+      box-shadow: 0 15px 40px rgba(7,26,53,.08);
+    }
+
+    .opportunity-emoji {
+      font-size: 45px;
+      margin-bottom: 12px;
+    }
+
+    .opportunity-card h3 {
+      color: #071a35;
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+
+    .opportunity-card p {
+      color: #667085;
+      font-size: 13px;
+    }
+
+    @media(max-width: 1000px) {
+      .jobs-grid {
+        grid-template-columns: 1fr;
+      }
+      .search-filter {
+        grid-template-columns: 1fr 1fr;
+      }
+      .opportunity-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media(max-width: 600px) {
+      .search-filter {
+        grid-template-columns: 1fr;
+      }
+      .opportunity-grid {
+        grid-template-columns: 1fr;
+      }
+      .job-meta {
+        grid-template-columns: 1fr;
+      }
+      .job-actions {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header class="header">
+  <div class="container nav">
+
+    <a href="/" class="logo">
+      <span>Yes</span>Cart
+    </a>
+
+    <button class="menu-btn" onclick="toggleMenu()" aria-label="Menu">
+      ☰
+    </button>
+
+    <nav id="navMenu">
+
+      <a href="/">Home</a>
+      <a href="/buy">Buy New</a>
+      <a href="/sell">Sell New</a>
+      <a href="/old-items">Old Items</a>
+      <a href="/delivery">Delivery</a>
+      <a href="/jobs">Jobs</a>
+      <a href="/about">About</a>
+      <a href="/contact">Contact</a>
+
+      <div class="auth-buttons">
+        <a href="/login" class="login-btn">Login</a>
+        <a href="/register" class="register-btn">Register</a>
+      </div>
+
+    </nav>
+
+  </div>
+</header>
+
+
+<!-- PAGE HERO -->
+
+<section class="page-hero">
+
+  <div class="container">
+
+    <h1>
+      JOIN <span>YESCART</span>
+    </h1>
+
+    <p>
+      Find opportunities and grow with YesCart.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- JOBS SECTION -->
+
+<section class="jobs-section">
+
+  <div class="container">
+
+    <!-- SEARCH & FILTER -->
+
+    <div class="search-filter">
+
+      <div>
+        <label>Search Jobs</label>
+        <input type="text" placeholder="Job title or keywords...">
+      </div>
+
+      <div>
+        <label>Job Type</label>
+        <select>
+          <option>All Types</option>
+          <option>Full-time</option>
+          <option>Part-time</option>
+          <option>Freelance</option>
+        </select>
+      </div>
+
+      <div>
+        <label>Location</label>
+        <select>
+          <option>All Locations</option>
+          <option>Remote</option>
+          <option>On-site</option>
+        </select>
+      </div>
+
+      <button class="search-btn">SEARCH</button>
+
+    </div>
+
+
+    <!-- JOB LISTINGS -->
+
+    <div class="jobs-grid">
+
+      <!-- Job 1 -->
+      <div class="job-card">
+
+        <div class="job-header">
+          <h3 class="job-title">Delivery Partner</h3>
+          <span class="job-type">FULL-TIME</span>
+        </div>
+
+        <div class="job-meta">
+          <div class="meta-item">
+            <span class="meta-icon">📍</span>
+            <span>Multiple Cities</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-icon">💵</span>
+            <span>₹20,000 - ₹30,000</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-icon">🏢</span>
+            <span>YesCart Delivery</span>
+          </div>
+        </div>
+
+        <p class="job-description">
+          Deliver packages across the city. Flexible timing, competitive pay, and growth opportunities.
+        </p>
+
+        <div class="job-tags">
+          <span class="job-tag">Transportation</span>
+          <span class="job-tag">Flexible Hours</span>
+        </div>
+
+        <div class="job-actions">
+          <button class="job-btn">VIEW MORE</button>
+          <button class="job-btn apply-btn">APPLY NOW</button>
+        </div>
+
+      </div>
+
+      <!-- Job 2 -->
+      <div class="job-card">
+
+        <div class="job-header">
+          <h3 class="job-title">Customer Support Executive</h3>
+          <span class="job-type">FULL-TIME</span>
+        </div>
+
+        <div class="job-meta">
+          <div class="meta-item">
+            <span class="meta-icon">📍</span>
+            <span>Remote</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-icon">💵</span>
+            <span>₹18,000 - ₹25,000</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-icon">🏢</span>
+            <span>YesCart Support</span>
+          </div>
+        </div>
+
+        <p class="job-description">
+          Handle customer inquiries and provide excellent support. Work from home with flexibility.
+        </p>
+
+        <div class="job-tags">
+          <span class="job-tag">Remote</span>
+          <span class="job-tag">Communication</span>
+        </div>
+
+        <div class="job-actions">
+          <button class="job-btn">VIEW MORE</button>
+          <button class="job-btn apply-btn">APPLY NOW</button>
+        </div>
+
+      </div>
+
+      <!-- Job 3 -->
+      <div class="job-card">
+
+        <div class="job-header">
+          <h3 class="job-title">Seller Onboarding Specialist</h3>
+          <span class="job-type">FULL-TIME</span>
+        </div>
+
+        <div class="job-meta">
+          <div class="meta-item">
+            <span class="meta-icon">📍</span>
+            <span>Delhi, Mumbai</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-icon">💵</span>
+            <span>₹25,000 - ₹35,000</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-icon">🏢</span>
+            <span>YesCart Growth</span>
+          </div>
+        </div>
+
+        <p class="job-description">
+          Help sellers launch their business on YesCart. Build relationships and drive seller success.
+        </p>
+
+        <div class="job-tags">
+          <span class="job-tag">Sales</span>
+          <span class="job-tag">Business Development</span>
+        </div>
+
+        <div class="job-actions">
+          <button class="job-btn">VIEW MORE</button>
+          <button class="job-btn apply-btn">APPLY NOW</button>
+        </div>
+
+      </div>
+
+      <!-- Job 4 -->
+      <div class="job-card">
+
+        <div class="job-header">
+          <h3 class="job-title">Social Media Content Creator</h3>
+          <span class="job-type">PART-TIME</span>
+        </div>
+
+        <div class="job-meta">
+          <div class="meta-item">
+            <span class="meta-icon">📍</span>
+            <span>Remote</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-icon">💵</span>
+            <span>₹15,000 - ₹25,000</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-icon">🏢</span>
+            <span>Marketing</span>
+          </div>
+        </div>
+
+        <p class="job-description">
+          Create engaging content for YesCart social media. Flexible working hours, creative freedom.
+        </p>
+
+        <div class="job-tags">
+          <span class="job-tag">Content</span>
+          <span class="job-tag">Creative</span>
+        </div>
+
+        <div class="job-actions">
+          <button class="job-btn">VIEW MORE</button>
+          <button class="job-btn apply-btn">APPLY NOW</button>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- OPPORTUNITIES SECTION -->
+
+<section class="opportunities-section">
+
+  <div class="container">
+
+    <div class="section-heading">
+      <span>GROWTH OPPORTUNITIES</span>
+      <h2>Build Your Future with YesCart</h2>
+      <p>Multiple ways to earn and grow on our platform</p>
+    </div>
+
+    <div class="opportunity-grid">
+
+      <div class="opportunity-card">
+        <div class="opportunity-emoji">💼</div>
+        <h3>Jobs</h3>
+        <p>Stable employment with competitive benefits.</p>
+      </div>
+
+      <div class="opportunity-card">
+        <div class="opportunity-emoji">🛍️</div>
+        <h3>Seller Account</h3>
+        <p>Start your own business and reach customers.</p>
+      </div>
+
+      <div class="opportunity-card">
+        <div class="opportunity-emoji">🚚</div>
+        <h3>Delivery Partner</h3>
+        <p>Flexible earning opportunity in your city.</p>
+      </div>
+
+      <div class="opportunity-card">
+        <div class="opportunity-emoji">📱</div>
+        <h3>Affiliate</h3>
+        <p>Earn commission by referring users.</p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+  <div class="container footer-grid">
+
+    <div>
+
+      <a href="/" class="logo footer-logo">
+        <span>Yes</span>Cart
+      </a>
+
+      <p>
+        Buy • Sell • Deliver • Grow
+      </p>
+
+      <p class="email">
+        yesCart1996@gmail.com
+      </p>
+
+    </div>
+
+
+    <div>
+
+      <h4>Quick Links</h4>
+
+      <a href="/buy">Buy New</a>
+      <a href="/sell">Sell New</a>
+      <a href="/old-items">Old Items</a>
+      <a href="/delivery">Delivery</a>
+
+    </div>
+
+
+    <div>
+
+      <h4>More</h4>
+
+      <a href="/jobs">Jobs</a>
+      <a href="/about">About</a>
+      <a href="/contact">Contact</a>
+
+    </div>
+
+  </div>
+
+
+  <div class="copyright">
+    © 2026 YesCart. All rights reserved.
+  </div>
+
+</footer>
+
+
+<script src="../script.js"></script>
+
+</body>
+</html>
