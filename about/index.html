@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>About YesCart — Our Story & Mission</title>
+  <meta name="description" content="Learn about YesCart's mission to connect buyers, sellers, and opportunities.">
+
+  <link rel="stylesheet" href="../style.css">
+
+  <style>
+    .page-hero {
+      background: linear-gradient(135deg, #071a35, #102b50);
+      color: white;
+      padding: 75px 0;
+      text-align: center;
+    }
+
+    .page-hero h1 {
+      font-size: clamp(36px, 6vw, 60px);
+      line-height: 1.05;
+      margin-bottom: 15px;
+    }
+
+    .page-hero h1 span {
+      color: #ff7a00;
+    }
+
+    .page-hero p {
+      color: #c6d0df;
+      font-size: 18px;
+    }
+
+    .about-section {
+      padding: 80px 0;
+      background: white;
+    }
+
+    .about-content {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .about-intro {
+      font-size: 18px;
+      color: #667085;
+      line-height: 1.8;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
+      margin-bottom: 60px;
+    }
+
+    .about-item h3 {
+      color: #071a35;
+      font-size: 24px;
+      margin-bottom: 12px;
+    }
+
+    .about-item p {
+      color: #667085;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    .values-section {
+      background: #f6f8fb;
+      padding: 80px 0;
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .value-card {
+      background: white;
+      border-radius: 18px;
+      padding: 30px;
+      text-align: center;
+      border: 1px solid #e7ebf0;
+      transition: .3s ease;
+    }
+
+    .value-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(7,26,53,.08);
+    }
+
+    .value-icon {
+      font-size: 45px;
+      margin-bottom: 15px;
+    }
+
+    .value-card h3 {
+      color: #071a35;
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .value-card p {
+      color: #667085;
+      font-size: 13px;
+    }
+
+    .team-section {
+      padding: 80px 0;
+      background: white;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      margin-top: 50px;
+    }
+
+    .team-member {
+      text-align: center;
+      padding: 30px;
+      border-radius: 18px;
+      background: #f6f8fb;
+      transition: .3s ease;
+    }
+
+    .team-member:hover {
+      transform: translateY(-5px);
+      background: white;
+      box-shadow: 0 15px 40px rgba(7,26,53,.08);
+    }
+
+    .member-avatar {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #ff7a00, #e86600);
+      display: grid;
+      place-items: center;
+      font-size: 40px;
+      margin: 0 auto 15px;
+    }
+
+    .team-member h3 {
+      color: #071a35;
+      font-size: 16px;
+      margin-bottom: 3px;
+    }
+
+    .member-role {
+      color: #ff7a00;
+      font-size: 12px;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    .member-bio {
+      color: #667085;
+      font-size: 12px;
+    }
+
+    @media(max-width: 900px) {
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+      .values-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media(max-width: 600px) {
+      .values-grid,
+      .team-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header class="header">
+  <div class="container nav">
+    <a href="/" class="logo"><span>Yes</span>Cart</a>
+    <button class="menu-btn" onclick="toggleMenu()" aria-label="Menu">☰</button>
+    <nav id="navMenu">
+      <a href="/">Home</a>
+      <a href="/buy">Buy New</a>
+      <a href="/sell">Sell New</a>
+      <a href="/old-items">Old Items</a>
+      <a href="/delivery">Delivery</a>
+      <a href="/jobs">Jobs</a>
+      <a href="/about">About</a>
+      <a href="/contact">Contact</a>
+      <div class="auth-buttons">
+        <a href="/login" class="login-btn">Login</a>
+        <a href="/register" class="register-btn">Register</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- PAGE HERO -->
+
+<section class="page-hero">
+  <div class="container">
+    <h1>ABOUT <span>YESCART</span></h1>
+    <p>Building the future of commerce, one opportunity at a time.</p>
+  </div>
+</section>
+
+<!-- ABOUT SECTION -->
+
+<section class="about-section">
+  <div class="container about-content">
+    <p class="about-intro">
+      YesCart is a unified platform designed to revolutionize how people buy, sell, and grow. We believe in creating equal opportunities for everyone—customers, sellers, and job seekers—in the digital economy.
+    </p>
+
+    <div class="about-grid">
+      <div class="about-item">
+        <h3>Our Mission</h3>
+        <p>To create a thriving digital ecosystem where buyers find quality products, sellers grow their businesses, and people find meaningful opportunities—all in one place.</p>
+      </div>
+      <div class="about-item">
+        <h3>Our Vision</h3>
+        <p>To become India's most trusted platform for commerce and opportunities, empowering millions of individuals and businesses to achieve their goals.</p>
+      </div>
+      <div class="about-item">
+        <h3>Our Story</h3>
+        <p>Founded in 2026, YesCart emerged from a simple idea: why should commerce be fragmented? We built a unified platform to solve real problems and create real value.</p>
+      </div>
+      <div class="about-item">
+        <h3>Our Commitment</h3>
+        <p>We're committed to transparency, safety, and continuous innovation. Every decision we make is guided by our users' needs and the impact we create.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUES SECTION -->
+
+<section class="values-section">
+  <div class="container">
+    <div class="section-heading">
+      <span>OUR VALUES</span>
+      <h2>What Drives Us</h2>
+    </div>
+
+    <div class="values-grid">
+      <div class="value-card">
+        <div class="value-icon">🤝</div>
+        <h3>Trust</h3>
+        <p>We build trust through transparency, security, and reliable service.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">⚡</div>
+        <h3>Innovation</h3>
+        <p>We constantly innovate to provide better solutions and experiences.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">🌍</div>
+        <h3>Inclusion</h3>
+        <p>We create opportunities for everyone, regardless of background or experience.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">📈</div>
+        <h3>Growth</h3>
+        <p>We're committed to helping our users grow and achieve their goals.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM SECTION -->
+
+<section class="team-section">
+  <div class="container">
+    <div class="section-heading">
+      <span>OUR TEAM</span>
+      <h2>Meet The People Behind YesCart</h2>
+    </div>
+
+    <div class="team-grid">
+      <div class="team-member">
+        <div class="member-avatar">👨‍💼</div>
+        <h3>Vikash Sharma</h3>
+        <div class="member-role">Founder & CEO</div>
+        <p>Visionary leader with passion for building scalable platforms.</p>
+      </div>
+      <div class="team-member">
+        <div class="member-avatar">👩‍💻</div>
+        <h3>Priya Singh</h3>
+        <div class="member-role">CTO</div>
+        <p>Technical architect driving innovation and platform development.</p>
+      </div>
+      <div class="team-member">
+        <div class="member-avatar">👨‍🎓</div>
+        <h3>Rohan Kumar</h3>
+        <div class="member-role">COO</div>
+        <p>Operations expert ensuring excellence in execution and growth.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+  <div class="container footer-grid">
+    <div>
+      <a href="/" class="logo footer-logo"><span>Yes</span>Cart</a>
+      <p>Buy • Sell • Deliver • Grow</p>
+      <p class="email">yesCart1996@gmail.com</p>
+    </div>
+    <div>
+      <h4>Quick Links</h4>
+      <a href="/buy">Buy New</a>
+      <a href="/sell">Sell New</a>
+      <a href="/old-items">Old Items</a>
+      <a href="/delivery">Delivery</a>
+    </div>
+    <div>
+      <h4>More</h4>
+      <a href="/jobs">Jobs</a>
+      <a href="/about">About</a>
+      <a href="/contact">Contact</a>
+    </div>
+  </div>
+  <div class="copyright">© 2026 YesCart. All rights reserved.</div>
+</footer>
+
+<script src="../script.js"></script>
+</body>
+</html>

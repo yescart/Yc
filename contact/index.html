@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Contact YesCart — Get In Touch</title>
+  <meta name="description" content="Contact YesCart for support, partnerships, or inquiries.">
+
+  <link rel="stylesheet" href="../style.css">
+
+  <style>
+    .page-hero {
+      background: linear-gradient(135deg, #071a35, #102b50);
+      color: white;
+      padding: 75px 0;
+      text-align: center;
+    }
+
+    .page-hero h1 {
+      font-size: clamp(36px, 6vw, 60px);
+      line-height: 1.05;
+      margin-bottom: 15px;
+    }
+
+    .page-hero h1 span {
+      color: #ff7a00;
+    }
+
+    .page-hero p {
+      color: #c6d0df;
+      font-size: 18px;
+    }
+
+    .contact-section {
+      padding: 80px 0;
+      background: #f6f8fb;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: start;
+    }
+
+    .contact-form-card {
+      background: white;
+      border-radius: 24px;
+      padding: 40px;
+      border: 1px solid #e7ebf0;
+      box-shadow: 0 10px 35px rgba(7,26,53,.05);
+    }
+
+    .contact-form-card h2 {
+      color: #071a35;
+      font-size: 28px;
+      margin-bottom: 12px;
+    }
+
+    .form-intro {
+      color: #667085;
+      font-size: 14px;
+      margin-bottom: 25px;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    .form-group label {
+      display: block;
+      color: #172033;
+      font-size: 13px;
+      font-weight: 800;
+      margin-bottom: 7px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      border: 1px solid #dfe4ea;
+      border-radius: 11px;
+      padding: 13px 14px;
+      outline: none;
+      font: inherit;
+      background: white;
+      transition: .2s;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: #ff7a00;
+      box-shadow: 0 0 0 3px rgba(255,122,0,.08);
+    }
+
+    .form-group textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .submit-btn {
+      width: 100%;
+      border: 0;
+      cursor: pointer;
+      margin-top: 8px;
+    }
+
+    .success-message {
+      display: none;
+      margin-top: 15px;
+      padding: 15px;
+      border-radius: 12px;
+      background: #eaf9f0;
+      color: #13763e;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .contact-info {
+      display: grid;
+      gap: 25px;
+    }
+
+    .info-card {
+      background: white;
+      border-radius: 18px;
+      padding: 28px;
+      border: 1px solid #e7ebf0;
+      display: grid;
+      grid-template-columns: 60px 1fr;
+      gap: 18px;
+      align-items: start;
+    }
+
+    .info-icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 14px;
+      background: #fff1e6;
+      display: grid;
+      place-items: center;
+      font-size: 28px;
+      flex-shrink: 0;
+    }
+
+    .info-content h3 {
+      color: #071a35;
+      font-size: 16px;
+      margin-bottom: 5px;
+    }
+
+    .info-content p {
+      color: #667085;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .info-content a {
+      color: #ff7a00;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .faq-section {
+      background: white;
+      padding: 80px 0;
+    }
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .faq-item {
+      background: #f6f8fb;
+      border-radius: 14px;
+      padding: 22px;
+      border: 1px solid #e7ebf0;
+      cursor: pointer;
+      transition: .3s ease;
+    }
+
+    .faq-item:hover {
+      background: white;
+      box-shadow: 0 10px 30px rgba(7,26,53,.06);
+    }
+
+    .faq-question {
+      color: #071a35;
+      font-size: 15px;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    .faq-answer {
+      color: #667085;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    @media(max-width: 900px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+      .faq-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header class="header">
+  <div class="container nav">
+    <a href="/" class="logo"><span>Yes</span>Cart</a>
+    <button class="menu-btn" onclick="toggleMenu()" aria-label="Menu">☰</button>
+    <nav id="navMenu">
+      <a href="/">Home</a>
+      <a href="/buy">Buy New</a>
+      <a href="/sell">Sell New</a>
+      <a href="/old-items">Old Items</a>
+      <a href="/delivery">Delivery</a>
+      <a href="/jobs">Jobs</a>
+      <a href="/about">About</a>
+      <a href="/contact">Contact</a>
+      <div class="auth-buttons">
+        <a href="/login" class="login-btn">Login</a>
+        <a href="/register" class="register-btn">Register</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- PAGE HERO -->
+
+<section class="page-hero">
+  <div class="container">
+    <h1>GET IN <span>TOUCH</span></h1>
+    <p>We'd love to hear from you. Contact us anytime.</p>
+  </div>
+</section>
+
+<!-- CONTACT SECTION -->
+
+<section class="contact-section">
+  <div class="container contact-grid">
+
+    <!-- FORM -->
+    <div class="contact-form-card">
+      <h2>Send Us A Message</h2>
+      <p class="form-intro">Fill in your details and we'll get back to you soon.</p>
+
+      <form id="contactForm">
+        <div class="form-group">
+          <label for="name">Full Name *</label>
+          <input type="text" id="name" placeholder="Your name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address *</label>
+          <input type="email" id="email" placeholder="your@email.com" required>
+        </div>
+
+        <div class="form-group">
+          <label for="subject">Subject *</label>
+          <select id="subject" required>
+            <option value="">Select subject</option>
+            <option>General Inquiry</option>
+            <option>Buyer Support</option>
+            <option>Seller Support</option>
+            <option>Partnership</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message *</label>
+          <textarea id="message" placeholder="Tell us more..." required></textarea>
+        </div>
+
+        <button type="submit" class="btn primary submit-btn">SEND MESSAGE</button>
+        <div id="successMessage" class="success-message">
+          ✓ Message sent successfully! We'll respond within 24 hours.
+        </div>
+      </form>
+    </div>
+
+    <!-- INFO -->
+    <div class="contact-info">
+      <div class="info-card">
+        <div class="info-icon">📧</div>
+        <div class="info-content">
+          <h3>Email</h3>
+          <p><a href="mailto:yesCart1996@gmail.com">yesCart1996@gmail.com</a></p>
+        </div>
+      </div>
+
+      <div class="info-card">
+        <div class="info-icon">📱</div>
+        <div class="info-content">
+          <h3>Phone</h3>
+          <p><a href="tel:+919999999999">+91 9999 999 999</a></p>
+        </div>
+      </div>
+
+      <div class="info-card">
+        <div class="info-icon">📍</div>
+        <div class="info-content">
+          <h3>Office</h3>
+          <p>New Delhi, India</p>
+        </div>
+      </div>
+
+      <div class="info-card">
+        <div class="info-icon">🕒</div>
+        <div class="info-content">
+          <h3>Business Hours</h3>
+          <p>Monday - Friday: 9 AM - 6 PM IST<br>Saturday: 10 AM - 4 PM IST<br>Sunday: Closed</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ SECTION -->
+
+<section class="faq-section">
+  <div class="container">
+    <div class="section-heading">
+      <span>QUICK ANSWERS</span>
+      <h2>Frequently Asked Questions</h2>
+    </div>
+
+    <div class="faq-grid">
+      <div class="faq-item">
+        <div class="faq-question">How do I create an account?</div>
+        <div class="faq-answer">Click the Register button in the header and fill in your details. Verification is quick and simple.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">Is it safe to buy on YesCart?</div>
+        <div class="faq-answer">Yes! We have secure payment gateways and buyer protection policies for all transactions.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">How do I list a product?</div>
+        <div class="faq-answer">Go to the Sell page, fill in your product details, and publish. It appears instantly to buyers.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">What are the seller fees?</div>
+        <div class="faq-answer">We offer competitive commission rates. Contact us for detailed pricing based on your category.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">How does delivery work?</div>
+        <div class="faq-answer">We offer integrated delivery solutions. You can book pickup to destination in a few clicks.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">Do you have customer support?</div>
+        <div class="faq-answer">Yes! Our support team is available 24/7 via email, phone, or chat to help you.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+  <div class="container footer-grid">
+    <div>
+      <a href="/" class="logo footer-logo"><span>Yes</span>Cart</a>
+      <p>Buy • Sell • Deliver • Grow</p>
+      <p class="email">yesCart1996@gmail.com</p>
+    </div>
+    <div>
+      <h4>Quick Links</h4>
+      <a href="/buy">Buy New</a>
+      <a href="/sell">Sell New</a>
+      <a href="/old-items">Old Items</a>
+      <a href="/delivery">Delivery</a>
+    </div>
+    <div>
+      <h4>More</h4>
+      <a href="/jobs">Jobs</a>
+      <a href="/about">About</a>
+      <a href="/contact">Contact</a>
+    </div>
+  </div>
+  <div class="copyright">© 2026 YesCart. All rights reserved.</div>
+</footer>
+
+<script src="../script.js"></script>
+<script>
+const contactForm = document.getElementById('contactForm');
+const successMessage = document.getElementById('successMessage');
+
+contactForm.addEventListener('submit', function(e) {
+  e.preventDefault();
+  successMessage.style.display = 'block';
+  contactForm.reset();
+});
+</script>
+</body>
+</html>
