@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Delivery — YesCart</title>
+  <meta name="description" content="Book fast and reliable delivery with YesCart.">
+
+  <link rel="stylesheet" href="../style.css">
+
+  <style>
+    .delivery-hero {
+      background:
+        radial-gradient(circle at 85% 20%, rgba(24,169,87,.18), transparent 30%),
+        linear-gradient(135deg,#071a35,#102b50);
+      color:white;
+      padding:75px 0 85px;
+    }
+
+    .delivery-hero-grid {
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      align-items:center;
+      gap:60px;
+    }
+
+    .delivery-hero h1 {
+      font-size:clamp(38px,5vw,62px);
+      line-height:1.05;
+      letter-spacing:-2px;
+      margin:12px 0 18px;
+    }
+
+    .delivery-hero h1 span {
+      color:#ff7a00;
+    }
+
+    .delivery-hero p {
+      color:#c7d1df;
+      font-size:18px;
+      max-width:600px;
+    }
+
+    .delivery-buttons {
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:28px;
+    }
+
+    .delivery-visual {
+      min-height:320px;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
+
+    .delivery-card {
+      width:330px;
+      background:white;
+      color:#071a35;
+      border-radius:26px;
+      padding:30px;
+      box-shadow:0 25px 65px rgba(0,0,0,.25);
+    }
+
+    .delivery-icon {
+      width:75px;
+      height:75px;
+      border-radius:20px;
+      background:#eaf9f0;
+      display:grid;
+      place-items:center;
+      font-size:40px;
+      margin-bottom:20px;
+    }
+
+    .delivery-card h3 {
+      font-size:24px;
+    }
+
+    .delivery-card p {
+      color:#667085;
+      font-size:14px;
+      margin-top:7px;
+    }
+
+    .status {
+      display:inline-block;
+      margin-top:18px;
+      padding:7px 12px;
+      border-radius:20px;
+      background:#eaf9f0;
+      color:#13763e;
+      font-size:11px;
+      font-weight:800;
+    }
+
+
+    /* BOOKING */
+
+    .delivery-section {
+      padding:80px 0;
+      background:#f6f8fb;
+    }
+
+    .delivery-layout {
+      display:grid;
+      grid-template-columns:1.35fr .65fr;
+      gap:30px;
+      align-items:start;
+    }
+
+    .delivery-form-card,
+    .delivery-info-card {
+      background:white;
+      border:1px solid #e7ebf0;
+      border-radius:24px;
+      padding:32px;
+      box-shadow:0 10px 35px rgba(7,26,53,.05);
+    }
+
+    .delivery-form-card h2,
+    .delivery-info-card h2 {
+      color:#071a35;
+      margin-bottom:8px;
+    }
+
+    .form-intro {
+      color:#667085;
+      font-size:14px;
+      margin-bottom:28px;
+    }
+
+    .form-row {
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:17px;
+    }
+
+    .form-group {
+      margin-bottom:18px;
+    }
+
+    .form-group label {
+      display:block;
+      color:#172033;
+      font-size:13px;
+      font-weight:800;
+      margin-bottom:7px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width:100%;
+      border:1px solid #dfe4ea;
+      border-radius:11px;
+      padding:13px 14px;
+      outline:none;
+      font:inherit;
+      background:white;
+      transition:.2s;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color:#ff7a00;
+      box-shadow:0 0 0 3px rgba(255,122,0,.08);
+    }
+
+    .form-group textarea {
+      min-height:95px;
+      resize:vertical;
+    }
+
+    .book-btn {
+      width:100%;
+      border:0;
+      cursor:pointer;
+    }
+
+    .success-message {
+      display:none;
+      margin-top:18px;
+      padding:15px;
+      border-radius:12px;
+      background:#eaf9f0;
+      color:#13763e;
+      font-size:14px;
+      font-weight:700;
+    }
+
+
+    /* INFO */
+
+    .delivery-feature {
+      display:flex;
+      gap:13px;
+      margin:22px 0;
+    }
+
+    .feature-icon {
+      flex:0 0 40px;
+      width:40px;
+      height:40px;
+      border-radius:12px;
+      background:#fff1e6;
+      display:grid;
+      place-items:center;
+      font-size:18px;
+    }
+
+    .delivery-feature h3 {
+      color:#071a35;
+      font-size:15px;
+      margin-bottom:3px;
+    }
+
+    .delivery-feature p {
+      color:#667085;
+      font-size:12px;
+    }
+
+    .note {
+      margin-top:25px;
+      padding:15px;
+      border-radius:14px;
+      background:#fff7ef;
+      border:1px solid #ffe1c4;
+      color:#8a4b13;
+      font-size:12px;
+    }
+
+
+    /* PROCESS */
+
+    .process {
+      background:white;
+      padding:80px 0;
+    }
+
+    .process-grid {
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:20px;
+    }
+
+    .process-card {
+      text-align:center;
+      padding:28px 20px;
+      border:1px solid #e7ebf0;
+      border-radius:20px;
+      transition:.25s;
+    }
+
+    .process-card:hover {
+      transform:translateY(-5px);
+      box-shadow:0 15px 35px rgba(7,26,53,.07);
+    }
+
+    .process-number {
+      width:48px;
+      height:48px;
+      margin:0 auto 15px;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      background:#071a35;
+      color:white;
+      font-weight:900;
+    }
+
+    .process-card h3 {
+      color:#071a35;
+      margin-bottom:7px;
+    }
+
+    .process-card p {
+      color:#667085;
+      font-size:13px;
+    }
+
+
+    @media(max-width:850px) {
+
+      .delivery-hero-grid,
+      .delivery-layout {
+        grid-template-columns:1fr;
+      }
+
+      .process-grid {
+        grid-template-columns:repeat(2,1fr);
+      }
+
+    }
+
+    @media(max-width:550px) {
+
+      .delivery-buttons {
+        flex-direction:column;
+      }
+
+      .delivery-buttons .btn {
+        width:100%;
+      }
+
+      .form-row {
+        grid-template-columns:1fr;
+        gap:0;
+      }
+
+      .delivery-form-card,
+      .delivery-info-card {
+        padding:22px;
+      }
+
+      .process-grid {
+        grid-template-columns:1fr;
+      }
+
+    }
+  </style>
+</head>
+
+<body>
+
+
+<!-- HEADER -->
+
+<header class="header">
+
+  <div class="container nav">
+
+    <a href="/Yc/" class="logo">
+      <span>Yes</span>Cart
+    </a>
+
+    <button
+      class="menu-btn"
+      onclick="toggleMenu()"
+      aria-label="Menu">
+      ☰
+    </button>
+
+    <nav id="navMenu">
+
+      <a href="/Yc/">Home</a>
+      <a href="/Yc/buy/">Buy New</a>
+      <a href="/Yc/sell/">Sell New</a>
+      <a href="/Yc/old-items/">Old Items</a>
+      <a href="/Yc/delivery/">Delivery</a>
+      <a href="/Yc/jobs/">Jobs</a>
+      <a href="/Yc/about/">About</a>
+      <a href="/Yc/contact/">Contact</a>
+
+      <div class="auth-buttons">
+        <a href="/Yc/login/" class="login-btn">Login</a>
+        <a href="/Yc/register/" class="register-btn">Register</a>
+      </div>
+
+    </nav>
+
+  </div>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="delivery-hero">
+
+  <div class="container delivery-hero-grid">
+
+    <div>
+
+      <span class="section-label">
+        YESCART DELIVERY
+      </span>
+
+      <h1>
+        MOVE IT.<br>
+        <span>WE DELIVER.</span>
+      </h1>
+
+      <p>
+        Book a delivery and connect pickup
+        with your destination through YesCart.
+      </p>
+
+      <div class="delivery-buttons">
+
+        <a href="#booking" class="btn primary">
+          BOOK DELIVERY
+        </a>
+
+        <a href="/Yc/login/" class="btn white-btn">
+          LOGIN
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <div class="delivery-visual">
+
+      <div class="delivery-card">
+
+        <div class="delivery-icon">
+          🚚
+        </div>
+
+        <h3>
+          Delivery Service
+        </h3>
+
+        <p>
+          Simple booking experience
+          for your delivery needs.
+        </p>
+
+        <span class="status">
+          ● READY TO BOOK
+        </span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- BOOKING -->
+
+<section class="delivery-section" id="booking">
+
+  <div class="container delivery-layout">
+
+
+    <!-- FORM -->
+
+    <div class="delivery-form-card">
+
+      <h2>
+        Book a Delivery
+      </h2>
+
+      <p class="form-intro">
+        Enter pickup and delivery details.
+      </p>
+
+      <form id="deliveryForm">
+
+
+        <div class="form-group">
+
+          <label for="pickup">
+            Pickup Location
+          </label>
+
+          <input
+            type="text"
+            id="pickup"
+            placeholder="Enter pickup location"
+            required
+          >
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label for="destination">
+            Delivery Location
+          </label>
+
+          <input
+            type="text"
+            id="destination"
+            placeholder="Enter delivery location"
+            required
+          >
+
+        </div>
+
+
+        <div class="form-row">
+
+          <div class="form-group">
+
+            <label for="package">
+              Package Type
+            </label>
+
+            <select id="package" required>
+
+              <option value="">
+                Select package
+              </option>
+
+              <option>
+                Small
+              </option>
+
+              <option>
+                Medium
+              </option>
+
+              <option>
+                Large
+              </option>
+
+              <option>
+                Documents
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="deliveryType">
+              Delivery Type
+            </label>
+
+            <select id="deliveryType" required>
+
+              <option value="">
+                Select type
+              </option>
+
+              <option>
+                Standard
+              </option>
+
+              <option>
+                Express
+              </option>
+
+            </select>
+
+          </div>
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label for="instructions">
+            Additional Instructions
+          </label>
+
+          <textarea
+            id="instructions"
+            placeholder="Any special instructions..."
+          ></textarea>
+
+        </div>
+
+
+        <button
+          type="submit"
+          class="btn primary book-btn">
+          BOOK DELIVERY
+        </button>
+
+
+        <div
+          id="successMessage"
+          class="success-message">
+
+          ✓ Delivery request prepared successfully.
+          Our booking system will be connected soon.
+
+        </div>
+
+      </form>
+
+    </div>
+
+
+    <!-- INFO -->
+
+    <aside class="delivery-info-card">
+
+      <h2>
+        Why YesCart Delivery?
+      </h2>
+
+
+      <div class="delivery-feature">
+
+        <div class="feature-icon">
+          ⚡
+        </div>
+
+        <div>
+
+          <h3>
+            Simple Booking
+          </h3>
+
+          <p>
+            Enter your pickup and
+            destination details easily.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="delivery-feature">
+
+        <div class="feature-icon">
+          📦
+        </div>
+
+        <div>
+
+          <h3>
+            Multiple Package Types
+          </h3>
+
+          <p>
+            Select the package size
+            that fits your delivery.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="delivery-feature">
+
+        <div class="feature-icon">
+          📍
+        </div>
+
+        <div>
+
+          <h3>
+            Pickup to Destination
+          </h3>
+
+          <p>
+            Keep your delivery details
+            organized in one place.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="delivery-feature">
+
+        <div class="feature-icon">
+          🤝
+        </div>
+
+        <div>
+
+          <h3>
+            Growing Network
+          </h3>
+
+          <p>
+            Built to connect customers
+            with delivery opportunities.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="note">
+        <strong>Note:</strong>
+        Live delivery pricing, driver matching,
+        tracking and payment will be connected
+        to the YesCart backend later.
+      </div>
+
+    </aside>
+
+  </div>
+
+</section>
+
+
+<!-- PROCESS -->
+
+<section class="process">
+
+  <div class="container">
+
+    <div class="section-heading">
+
+      <span>HOW IT WORKS</span>
+
+      <h2>
+        Delivery Made Simple
+      </h2>
+
+      <p>
+        A simple flow designed for customers
+        and delivery partners.
+      </p>
+
+    </div>
+
+
+    <div class="process-grid">
+
+
+      <div class="process-card">
+
+        <div class="process-number">
+          1
+        </div>
+
+        <h3>
+          Book
+        </h3>
+
+        <p>
+          Enter pickup and destination.
+        </p>
+
+      </div>
+
+
+      <div class="process-card">
+
+        <div class="process-number">
+          2
+        </div>
+
+        <h3>
+          Match
+        </h3>
+
+        <p>
+          Connect with a delivery partner.
+        </p>
+
+      </div>
+
+
+      <div class="process-card">
+
+        <div class="process-number">
+          3
+        </div>
+
+        <h3>
+          Deliver
+        </h3>
+
+        <p>
+          Package moves to its destination.
+        </p>
+
+      </div>
+
+
+      <div class="process-card">
+
+        <div class="process-number">
+          4
+        </div>
+
+        <h3>
+          Complete
+        </h3>
+
+        <p>
+          Delivery reaches the destination.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+  <div class="container footer-grid">
+
+    <div>
+
+      <a href="/Yc/" class="logo footer-logo">
+        <span>Yes</span>Cart
+      </a>
+
+      <p>
+        Buy • Sell • Deliver • Grow
+      </p>
+
+      <p class="email">
+        yesCart1996@gmail.com
+      </p>
+
+    </div>
+
+
+    <div>
+
+      <h4>Quick Links</h4>
+
+      <a href="/Yc/buy/">Buy New</a>
+      <a href="/Yc/sell/">Sell New</a>
+      <a href="/Yc/old-items/">Old Items</a>
+      <a href="/Yc/delivery/">Delivery</a>
+
+    </div>
+
+
+    <div>
+
+      <h4>More</h4>
+
+      <a href="/Yc/jobs/">Jobs</a>
+      <a href="/Yc/about/">About</a>
+      <a href="/Yc/contact/">Contact</a>
+
+    </div>
+
+  </div>
+
+
+  <div class="copyright">
+    © 2026 YesCart. All rights reserved.
+  </div>
+
+</footer>
+
+
+<script src="../script.js"></script>
+
+<script>
+
+const deliveryForm =
+  document.getElementById("deliveryForm");
+
+const successMessage =
+  document.getElementById("successMessage");
+
+deliveryForm.addEventListener("submit", function(event) {
+
+  event.preventDefault();
+
+  successMessage.style.display = "block";
+
+  deliveryForm.reset();
+
+  successMessage.scrollIntoView({
+    behavior: "smooth",
+    block: "center"
+  });
+
+});
+
+</script>
+
+</body>
+</html>
